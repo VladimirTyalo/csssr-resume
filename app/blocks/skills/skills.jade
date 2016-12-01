@@ -1,0 +1,34 @@
+// TODO add other attributes and possibility to put link inside label
+mixin checkbox(label, name, checked)
+	+e.LABEL.label #{label}
+	+e.INPUT.input(type = "checkbox",name = name)
+
+mixin skills()
+	+b.SECTION.skills&attributes(attributes)
+		+e.H3.title Расскажите о себе чекбоксами
+
+		+e.P.description Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
+
+		+e.checkbox-wrapper
+			+e.DIV.column
+				+checkbox("БЭМ/OOCSS", "bem")
+				+checkbox("Pug (Jade)", "jade")
+				+checkbox("Stylus/LESS/SASS", "preproc")
+				+checkbox("Работаю с SVG", "svg")
+				+checkbox("Верстаю семантично", "semantic")
+				+checkbox("Accessibility (A11Y)", "aria")
+				+checkbox("ES2015/ES2016", "es6")
+
+			+e.DIV.column
+				+checkbox("Gulp/GRUNT", "gulp")
+				+checkbox("Webpack", "webpack")
+				+checkbox("Дружу с WebGL", "webGL")
+				+checkbox("jQuery", "jQuery")
+				+checkbox("Знаю/изучаю React", "react")
+				+checkbox("Знаю/изучаю Node.js", "node")
+
+			+e.DIV.column
+				+checkbox("Использую Git", "git")
+				+checkbox("С глазомером всё ок", "eye")
+				+checkbox("Читаю blog.csssr.ru", "blog")
+		block

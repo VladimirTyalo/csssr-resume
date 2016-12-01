@@ -1,0 +1,32 @@
+include /../node_modules/bemto.jade/bemto
+include /../node_modules/jade-injected/jade-injected
+include ../page/page
+include ../header/header
+include ../container/container
+include ../scripts/scripts
+include ../main-form/main-form
+include ../personal-info/personal-info
+include ../skills/skills
+include ../javascript-level/javascript-level
+include ../about/about
+include ../plans/plans
+include ../about/about
+include ../date/date
+
+
+
+doctype html
+html(lang='ru')
+	include ../head/head
+	+page
+		+container
+			+header
+			+main-form
+				+personal-info
+				+skills
+				+javascript-level
+				+about
+				+plans
+				+date
+			block content
+			+scripts(['app.min.js'])
