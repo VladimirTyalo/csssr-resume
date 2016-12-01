@@ -3,20 +3,25 @@
 mixin personal-info(fields)
 	+b.SECTION.personal-info&attributes(attributes)
 
-		+e.LABEL.label Полное ФИО
-		+e.INPUT.input(value='Тяло Владимир Иванович', required=true)
+		+e.DIV.input-wrapper
+			+e.LABEL.label Полное ФИО
+			+e.INPUT.input(value='Тяло Владимир Иванович', required=true)
 
-		+e.LABEL.label Год рождения
-		+e.INPUT.input(type='text', value='1990', required=true)
+		+e.DIV.input-wrapper
+			+e.LABEL.label Год рождения
+			+e.INPUT.input(type='text', value='1980', required=true)
 
-		+e.LABEL.label Место жительства
-		+e.INPUT.input(type='text', value='г. Самара, Россия', required=true)
+		+e.DIV.input-wrapper
+			+e.LABEL.label Место жительства
+			+e.INPUT.input(type='text', value='г. Самара, Россия', required=true)
 
-		+e.LABEL.label Скайп
-		+e.INPUT.input(type='text', value='vladimir.tyalo', required=true)
+		+e.DIV.input-wrapper
+			+e.LABEL.label Скайп
+			+e.INPUT.input(type='text', value='vladimir.tyalo', required=true)
 
-		+e.LABEL.label Почта
-		+e.INPUT.input(type='email', value='bobtial@inbox.ru', required=true)
+		+e.DIV.input-wrapper
+			+e.LABEL.label Почта
+			+e.INPUT.input(type='email', value='bobtial@inbox.ru', required=true)
 
 
 		block

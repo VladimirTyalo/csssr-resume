@@ -1,2 +1,33 @@
 .personal-info
-	display block
+	margin-bottom 70px
+
+	&__input-wrapper
+		display flex
+		flex-flow row nowrap
+		justify-content space-around
+		align-items flex-end
+
+	&__label
+		set-font-size(font-size-label)
+		line-height font-size-label
+
+
+		font-weight bold
+		color font-color-inputs
+
+		margin-right 18px
+		white-space nowrap
+
+
+	&__input
+		flex 1 0 200px
+		background transparent
+		border none
+
+		font-size font-size-input
+		color font-color-inputs
+
+		padding 5px 15px
+
+		// TODO temp border-box
+		border-bottom 2px solid black
