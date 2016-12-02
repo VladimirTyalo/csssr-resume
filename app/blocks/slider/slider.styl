@@ -31,15 +31,7 @@
 		set-font-size(font-size-slider)
 		line-height 1.35
 		font-weight bold
-
-		&::before
-			content ''
-			position absolute
-			width 2px
-			height 15px
-			top -30px
-			left 0
-			background color-borders
+		margin-right 5px
 
 		&:nth-of-type(1)
 			flex-basis 148px
@@ -55,9 +47,14 @@
 			flex-basis 140px
 			text-align right
 			padding-top 5px
+			margin-right 0
 
 			&::before
 				display none
 
-.slider__knob:hover
-	transform scale(1.5)
+
+@media (max-width 520px)
+	.slider
+
+		&__notation-item
+			set-font-size(13px)

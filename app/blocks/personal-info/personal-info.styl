@@ -31,3 +31,32 @@
 		padding 7px 15px
 
 		border-bottom 2px solid black
+
+@media (max-width 920px)
+	.personal-info
+		&__input-wrapper
+			flex-flow row wrap
+			justify-content flex-start
+
+
+
+		&__label
+			set-font-size(18px);
+			width 100%
+
+		&__input
+			set-font-size(20px)
+			width 100%
+			padding-left 0
+
+
+@media (max-width 440px)
+	.personal-info
+		margin-bottom 30px
+
+		&__label
+			set-font-size(16px)
+
+		&__input
+			set-font-size(18px)
+			white-space prewrap

@@ -45,7 +45,7 @@
 			size(16px, 16px)
 			top 50%
 			left 0
-			transform translate3d(0, -50%, 0)
+			transform translate3d(0, -45%, 0)
 			border 2px solid color-borders
 			border-radius .2em
 
@@ -65,3 +65,10 @@
 	transform translate3d(3px, -55%, 0)
 	background color-borders
 	background url('../images/icon-check.svg') no-repeat
+
+
+@media (max-width 500px)
+	.skills
+		margin-bottom 20px
+		&__label
+			set-font-size(18px)
