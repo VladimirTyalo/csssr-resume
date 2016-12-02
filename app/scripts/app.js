@@ -12,6 +12,4 @@ $(() => {
 
 	const $slider = $('#slider');
 	const slider = new Slider($slider);
-
-
 });
