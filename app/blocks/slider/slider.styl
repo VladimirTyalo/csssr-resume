@@ -11,12 +11,14 @@
 
 	&__knob
 		position absolute
+		cursor pointer
 		top -20px
 		left 50%
-		width 0
-		height 0
+		width 1px
+		height 1px
 		border 8px solid transparent
 		border-top 14px solid #2f1b15
+		transition transform 0.3s
 
 	&__notations
 		display flex
@@ -25,6 +27,7 @@
 
 	&__notation-item
 		position relative
+		cursor pointer
 		set-font-size(font-size-slider)
 		line-height 1.35
 		font-weight bold
@@ -55,3 +58,6 @@
 
 			&::before
 				display none
+
+.slider__knob:hover
+	transform scale(1.5)
