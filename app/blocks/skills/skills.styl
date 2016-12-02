@@ -1,29 +1,67 @@
 .skills
+	margin-bottom 56px
 
 	&__title
-		set-font-size(font-size-title)
-		color font-color-title
-
-		font-weight bold
-
-		margin-bottom remify(10px)
+		title()
 
 	&__description
-		set-font-size(font-size-text)
+		margin-bottom 23px
 		color font-color-text
-
-		margin-bottom remify(30px)
+		set-font-size(font-size-text)
+		line-height 1.5
 
 	&__checkbox-wrapper
 		display flex
-		flex-flow row wrapp
-		justify-content space-around
+		flex-direction row
+		flex-wrap wrap
+		justify-content flex-start
 
 	&__column
-		width 30%
+		flex-grow 1
+		flex-shrink 1
+
+		// adjust widths for pixel perfect
+		&:nth-of-type(1)
+			flex-basis 249px
+
+		&:nth-of-type(2)
+			flex-basis 260px
+
+		&:nth-of-type(3)
+			flex-basis 240px
 
 
+	&__label
+		position relative
+		display block
+		cursor pointer
+		padding 7px 5px 7px 28px
+		set-font-size(font-size-checkbox)
+		font-weight bold
 
+		&::before
+			content ''
+			position absolute
+			size(16px, 16px)
+			top 50%
+			left 0
+			transform translate3d(0, -50%, 0)
+			border 2px solid color-borders
+			border-radius .2em
 
 	&__input
 		display none
+
+
+// set checkmark on  when input set checked
+.skills__input:checked + .skills__label::after
+	content ''
+	position absolute
+	cursor pointer
+	width 18px
+	height 18px
+	top 50%
+	left 0
+	transform translate3d(3px, -55%, 0)
+	background color-borders
+	background url('../images/icon-check.svg') no-repeat

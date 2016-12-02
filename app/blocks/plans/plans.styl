@@ -1,2 +1,51 @@
 .plans
-	display block
+	margin-bottom 74px
+
+	&__title
+		title()
+
+	&__text
+		margin-bottom 12px
+		color font-color-text
+		set-font-size(font-size-text)
+
+	&__wrapper
+		display flex
+		flex-flow row wrap
+		justify-content flext-start
+
+	&__label
+		position relative
+		display inline-block
+		cursor pointer
+		padding 10px 20px 10px 35px
+		white-space nowrap
+		set-font-size(font-size-radio)
+		font-weight bold
+
+		&::before
+			content ''
+			position absolute
+			size(18px, 18px)
+			top 50%
+			left 0
+			transform translate3d(0, -50%, 0)
+			border 2px solid color-borders
+			border-radius 50%
+
+
+	&__input
+		display none
+
+// set radio on  when input set checked
+.plans__input:checked + .plans__label::after
+	content ''
+	position absolute
+	cursor pointer
+	width 13px
+	height 13px
+	top 50%
+	left 0;
+	transform translate3d(5px, -50%, 0)
+	border-radius 50%;
+	background color-borders

@@ -1,7 +1,7 @@
 // TODO add other attributes and possibility to put link inside label
 mixin checkbox(label, name, checked)
-	+e.LABEL.label #{label}
-	+e.INPUT.input(type = "checkbox",name = name)
+	+e.INPUT.input(type = "checkbox",name = name, id=name)
+	+e.LABEL.label(for=name) #{label}
 
 mixin skills()
 	+b.SECTION.skills&attributes(attributes)
@@ -9,7 +9,7 @@ mixin skills()
 
 		+e.P.description Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.
 
-		+e.checkbox-wrapper
+		+e.DIV.checkbox-wrapper
 			+e.DIV.column
 				+checkbox("БЭМ/OOCSS", "bem")
 				+checkbox("Pug (Jade)", "jade")
@@ -24,6 +24,7 @@ mixin skills()
 				+checkbox("Webpack", "webpack")
 				+checkbox("Дружу с WebGL", "webGL")
 				+checkbox("jQuery", "jQuery")
+				+checkbox("Знаю/изучаю Angular", "angular")
 				+checkbox("Знаю/изучаю React", "react")
 				+checkbox("Знаю/изучаю Node.js", "node")
 
@@ -31,4 +32,6 @@ mixin skills()
 				+checkbox("Использую Git", "git")
 				+checkbox("С глазомером всё ок", "eye")
 				+checkbox("Читаю blog.csssr.ru", "blog")
+				+checkbox("Я ленивый(-ая)", "lasy")
+				+checkbox("У меня хороший английсский", "english")
 		block

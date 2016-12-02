@@ -1,6 +1,7 @@
-mixin radio(label, checked)
-	+e.LABEL.label #{label}
-	+e.INPUT.input(type = "radio",name = "plan")
+// helper mixin for radio input + label
+mixin radio(label, id, checked)
+	+e.INPUT.input(type = "radio",name = "plan", id=id, checked=checked)
+	+e.LABEL.label(for=id) #{label}
 
 mixin plans()
 	+b.SECTION.plans&attributes(attributes)
@@ -8,9 +9,9 @@ mixin plans()
 		+e.P.text Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
 
 		+e.DIV.radio-wrapper
-			+radio("Верстать")
-			+radio("Прокачиваться в JS")
-			+radio("Менеджерство")
-			+radio("Другое")
+			+radio("Верстать", "html", true)
+			+radio("Прокачиваться в JS", "js")
+			+radio("Менеджерство", "pm")
+			+radio("Другое", "other")
 
 		block

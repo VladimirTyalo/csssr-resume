@@ -1,4 +1,22 @@
 .about
+	margin-bottom 60px
 
 	&__title
-		set-font-size(font-size-title)
+		title()
+		margin-bottom 14px
+
+	&__text
+		margin-bottom 26px
+		color font-color-text
+		set-font-size(font-size-text)
+		line-height 1.5
+
+	&__textarea
+		width 100%
+		border none
+		set-font-size(font-size-input)
+		line-height 1.85
+		background-color transparent
+		background-image linear-gradient(color-borders 2px, transparent 1px)
+		background-size 100% 1.85em
+		background-position 0 1.75em
