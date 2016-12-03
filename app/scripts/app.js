@@ -18,6 +18,7 @@ $(() => {
 	// init slider
 	const $slider = $('#slider');
 	const slider = new Slider($slider);
+	slider.init();
 
 	// init datepicker
 	// const $flatpickr = $('#flatpickr').flatpickr({

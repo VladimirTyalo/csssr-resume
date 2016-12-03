@@ -161,10 +161,8 @@ const Slider = element => {
 
 		// add onMouseDown event list-group-item-danger
 		$el.on('mousedown', onMouseDown);
+		createScale();
 	};
-
-	createScale();
-	init();
 
 	// public function to find position of the knob (0 - n) where n is number of marks
 	const getValue = () => {
@@ -173,7 +171,8 @@ const Slider = element => {
 
 
 	return {
-		getValue
+		getValue,
+		init
 	};
 };
 
