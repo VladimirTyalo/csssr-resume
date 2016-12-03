@@ -1,6 +1,6 @@
 // TODO add other attributes and possibility to put link inside label
 mixin checkbox(label, name, checked)
-	+e.INPUT.input(type = "checkbox",name = name, id=name)
+	+e.INPUT.input(type = "checkbox",name = name, id=name, checked=checked)
 	+e.LABEL.label(for=name) #{label}
 
 mixin skills()
@@ -11,27 +11,27 @@ mixin skills()
 
 		+e.DIV.checkbox-wrapper
 			+e.DIV.column
-				+checkbox("БЭМ/OOCSS", "bem")
+				+checkbox("БЭМ/OOCSS", "bem", true)
 				+checkbox("Pug (Jade)", "jade")
-				+checkbox("Stylus/LESS/SASS", "preproc")
+				+checkbox("Stylus/LESS/SASS", "preproc", true)
 				+checkbox("Работаю с SVG", "svg")
-				+checkbox("Верстаю семантично", "semantic")
+				+checkbox("Верстаю семантично", "semantic", true)
 				+checkbox("Accessibility (A11Y)", "aria")
-				+checkbox("ES2015/ES2016", "es6")
+				+checkbox("ES2015/ES2016", "es6", true)
 
 			+e.DIV.column
-				+checkbox("Gulp/GRUNT", "gulp")
-				+checkbox("Webpack", "webpack")
+				+checkbox("Gulp/GRUNT", "gulp", true)
+				+checkbox("Webpack", "webpack", true)
 				+checkbox("Дружу с WebGL", "webGL")
 				+checkbox("jQuery", "jQuery")
 				+checkbox("Знаю/изучаю Angular", "angular")
-				+checkbox("Знаю/изучаю React", "react")
+				+checkbox("Знаю/изучаю React", "react", true)
 				+checkbox("Знаю/изучаю Node.js", "node")
 
 			+e.DIV.column
-				+checkbox("Использую Git", "git")
-				+checkbox("С глазомером всё ок", "eye")
-				+checkbox("Читаю blog.csssr.ru", "blog")
+				+checkbox("Использую Git", "git", true)
+				+checkbox("С глазомером всё ок", "eye", true)
+				+checkbox("Читаю blog.csssr.ru", "blog", true)
 				+checkbox("Я ленивый(-ая)", "lasy")
-				+checkbox("У меня хороший английсский", "english")
+				+checkbox("У меня хороший английсский", "english", true)
 		block
