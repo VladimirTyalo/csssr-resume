@@ -9,7 +9,7 @@ const Slider = element => {
 	const TRANSFORM_SCALE_NORMAL = 1.0;
 	let isMouseDown = false;
 	// get array of % scale
-	const percentages = $marks.map( (idx, m) => Number(m.getAttribute('data-value'))).toArray();
+	const percentages = $marks.map((idx, m) => Number(m.getAttribute('data-value'))).toArray();
 
 	// value - corresponding index of percentages array this value returned by public API
 	let value = 1;
@@ -18,7 +18,14 @@ const Slider = element => {
 	const getLeftAttr = mark => {
 		const position = Number(mark.getAttribute('data-value'));
 		const width = Number($field[0].offsetWidth);
-		const left = width * (position / 100) - $knob[0].offsetWidth / 2;
+
+		let left = null;
+		if (position === 100) {
+			left = width * (position / 100) - $knob[0].offsetWidth;
+		}else {
+			left = width * (position / 100) - $knob[0].offsetWidth / 2;
+		}
+
 
 		return left;
 	};
@@ -32,7 +39,7 @@ const Slider = element => {
 		value = percentages.indexOf(Number(mark.getAttribute('data-value')));
 	};
 
-	// fill field with little marks
+	// render scale marks on the field
 	const createScale = () => {
 		const fragment = document.createDocumentFragment();
 
@@ -54,7 +61,7 @@ const Slider = element => {
 		$field[0].appendChild(fragment);
 	};
 
-    // culculate new left position
+	// culculate new left position
 	function getLeftPosition(ev) {
 		const fieldWidth = $field[0].offsetWidth;
 		const halfKnob = $knob[0].offsetWidth / 2;
@@ -77,9 +84,11 @@ const Slider = element => {
 
 	function findNearestMarkPosition(ev) {
 		const coordInPercentages = getLeftPosition(ev) * 100 / $field[0].offsetWidth;
-		const mark = percentages.reduce( (acc, el) => {
+		const mark = percentages.reduce((acc, el) => {
 			const delta = Math.abs(coordInPercentages - el);
-			if (acc[1] > Math.abs(delta)) {return [el, delta];}
+			if (acc[1] > Math.abs(delta)) {
+				return [el, delta];
+			}
 			return acc;
 		}, [0, Infinity]);
 
@@ -88,14 +97,18 @@ const Slider = element => {
 
 	function onMouseMove(ev) {
 		ev.preventDefault();
-		if (!isMouseDown) {return;}
+		if (!isMouseDown) {
+			return;
+		}
 		const coord = getLeftPosition(ev);
 
 		// set knob position;
 		$knob.css('left', coord);
 		// listen to mouseup on the whole document
 		document.addEventListener('mouseup', function onMouseUp(event) {
-			if (!isMouseDown) {return;}
+			if (!isMouseDown) {
+				return;
+			}
 			isMouseDown = false;
 			// remove listeners and styles
 			document.removeEventListener('mousemove', onMouseMove);
@@ -103,7 +116,13 @@ const Slider = element => {
 			document.removeEventListener('mouseup', onMouseUp);
 			// move knob to the nearest mark
 			const nearest = findNearestMarkPosition(event);
-			const left = nearest * $field[0].offsetWidth / 100 - $knob[0].offsetWidth / 2 + 'px';
+			let left = null;
+
+			if (nearest === 100) {
+				left = nearest * $field[0].offsetWidth / 100 - $knob[0].offsetWidth + 'px';
+			}else {
+				left = nearest * $field[0].offsetWidth / 100 - $knob[0].offsetWidth / 2 + 'px';
+			}
 
 			$knob.css('left', left);
 
@@ -147,9 +166,7 @@ const Slider = element => {
 	createScale();
 	init();
 
-
-
-
+	// public function to find position of the knob (0 - n) where n is number of marks
 	const getValue = () => {
 		return value;
 	};

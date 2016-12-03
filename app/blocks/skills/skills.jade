@@ -1,7 +1,9 @@
 // TODO add other attributes and possibility to put link inside label
-mixin checkbox(label, name, checked)
+mixin checkbox(label, name, checked, href, descr)
 	+e.INPUT.input(type = "checkbox",name = name, id=name, checked=checked)
 	+e.LABEL.label(for=name) #{label}
+		if href
+			+e.A.link(href=href target="_blank") #{descr}
 
 mixin skills()
 	+b.SECTION.skills&attributes(attributes)
@@ -31,7 +33,8 @@ mixin skills()
 			+e.DIV.column
 				+checkbox("Использую Git", "git", true)
 				+checkbox("С глазомером всё ок", "eye", true)
-				+checkbox("Читаю blog.csssr.ru", "blog", true)
+				+checkbox("Читаю", "csssr", true, "http://blog.csssr.ru", "blog.csssr.ru")
 				+checkbox("Я ленивый(-ая)", "lasy")
 				+checkbox("У меня хороший английсский", "english", true)
+
 		block

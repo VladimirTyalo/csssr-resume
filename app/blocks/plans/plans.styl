@@ -1,5 +1,5 @@
 .plans
-	margin-bottom 74px
+	margin-bottom 66px
 
 	&__title
 		title()
@@ -16,19 +16,22 @@
 
 	&__label
 		position relative
-		display inline-block
-		cursor pointer
 		padding 10px 20px 10px 35px
-		white-space nowrap
+		display inline-block
 		set-font-size(font-size-radio)
 		font-weight bold
+		white-space nowrap
+		cursor pointer
+
+		&:active
+			opacity .5
 
 		&::before
-			content ''
 			position absolute
-			size(18px, 18px)
 			top 10px
 			left -1px
+			size(18px, 18px)
+			content ''
 			border 2px solid color-borders
 			border-radius 50%
 
@@ -38,15 +41,15 @@
 
 // set radio on  when input set checked
 .plans__input:checked + .plans__label::after
-	content ''
 	position absolute
-	cursor pointer
+	top 15px
+	left 4px
 	width 12px
 	height 12px
-	top 15px
-	left 4px;
-	border-radius 50%;
+	cursor pointer
+	content ''
 	background color-borders
+	border-radius 50%
 
 @media (max-width 1000px)
 	.plans

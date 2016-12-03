@@ -1,40 +1,52 @@
 .date
 
-	&__title
+	&__label
+		margin-right 10px
+		margin-bottom 0
 		display inline-block
 		vertical-align bottom
 		title()
-		margin-bottom 0
+		set-font-size(22.43px)
 
-	&__value
+
+	&__input
+		padding-left 10px
 		display inline-block
 		input()
+		max-width 240px
 
+
+@media (max-width 500px)
+	.date
+		&__input
+			max-width 100%
+			font-size 16px
 
 // to override vendor datepicker styles use !important
-
-.date input
-  cursor pointer
-	padding 7px 15px !important
-	font-size font-size-input !important
-	color font-color-inputs !important
-	border none !important
-	border-bottom 2px solid black !important
-	background transparent !important
-	max-width 220px
-
-.flatpickr-calendar
-	background rgba(0, 0, 0, 0.2) !important
-	color white !important
-	border: 1px solid color-borders !important
-
-.arrowBottom:after
-		border-top-color color-borders !important
-
-.arrowTop:after
-	 border-bottom-color color-borders !important
-
-
-.selected
-	background #D0EAB7!important
-	border-color #D0EAB7 !important
+//
+// .date input
+// 	padding 7px 15px !important
+// 	font-size font-size-input !important
+// 	color font-color-inputs !important
+// 	border none !important
+// 	border-bottom 2px solid black !important
+// 	background transparent !important
+// 	max-width 250px
+// 	cursor pointer
+//
+// .flatpickr-calendar
+// 	background rgba(200, 200, 200, 0.7) !important
+// 	// color white !important
+// 	border: 1px solid color-borders !important
+//
+// .arrowBottom:after
+// 		border-top-color color-borders !important
+//
+// .arrowTop:after
+// 	 border-bottom-color color-borders !important
+//
+//
+// .selected
+// 	background #D0EAB7!important
+// 	border-color #D0EAB7 !important
+//
