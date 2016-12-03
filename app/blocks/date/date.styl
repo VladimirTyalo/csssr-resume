@@ -10,7 +10,34 @@
 
 	&__value
 		display inline-block
-		padding 5px 10px
-		vertical-align bottom
-		set-font-size(font-size-input)
-		border-bottom 2px solid black
+
+
+
+
+
+// to override vendor datepicker styles use !important
+
+.date input
+	padding 7px 15px !important
+	font-size font-size-input !important
+	color font-color-inputs !important
+	border none !important
+	border-bottom 2px solid black !important
+	background transparent !important
+	max-width 220px
+
+.flatpickr-calendar
+	background rgba(0, 0, 0, 0.2) !important
+	color white !important
+	border: 1px solid color-borders !important
+
+.arrowBottom:after
+		border-top-color color-borders !important
+
+.arrowTop:after
+	 border-bottom-color color-borders !important
+
+
+.selected
+	background #D0EAB7!important
+	border-color #D0EAB7 !important

@@ -26,7 +26,7 @@ const Slider = element => {
 
 	// click on item should move knob to mark position
 	const onMarkClick = mark => {
-		$knob.css('transition', '0.2s');
+		$knob.css('transition', 'scale 0.2s');
 		$knob.css('left', getLeftAttr(mark) + 'px');
 
 		value = percentages.indexOf(Number(mark.getAttribute('data-value')));
