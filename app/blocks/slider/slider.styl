@@ -12,16 +12,29 @@
 		border-left 3px solid color-borders
 		border-right 3px solid color-borders
 
+	// make it bigger for better user experience
 	&__knob
 		position absolute
-		top -20px
+		top -50px
 		left 50%
-		width 1px
-		height 1px
+		width 50px
+		height 50px
 		cursor pointer
-		border 8px solid transparent
-		border-top 14px solid #2f1b15
 		transition transform .3s
+
+		// inner triangle
+		&::after
+			position absolute
+			top 25px
+			left 50%
+			width 1px
+			height 1px
+			content ''
+			border 8px solid transparent
+			border-top 14px solid #2f1b15
+			transform translateX(-50%)
+			transition transform .3s
+
 
 	&__notations
 		display flex
@@ -35,9 +48,11 @@
 		font-weight bold
 		line-height 1.35
 		cursor pointer
+		transition .3s
 
 		&:hover
-			transform scale(1.05)
+			transform rotate(2deg)
+
 
 
 		&:nth-of-type(1)

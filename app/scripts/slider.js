@@ -8,6 +8,7 @@ const Slider = element => {
 	const TRANSFORM_SCALE_UP = 1.4;
 	const TRANSFORM_SCALE_NORMAL = 1.0;
 	let isMouseDown = false;
+
 	// get array of % scale
 	const percentages = $marks.map((idx, m) => Number(m.getAttribute('data-value'))).toArray();
 
@@ -18,14 +19,14 @@ const Slider = element => {
 	const getLeftAttr = mark => {
 		const position = Number(mark.getAttribute('data-value'));
 		const width = Number($field[0].offsetWidth);
-
 		let left = null;
-		if (position === 100) {
-			left = width * (position / 100) - $knob[0].offsetWidth;
-		}else {
+		if (position === 0) {
+			left = -$knob[0].offsetWidth * 0.5;
+		} else if (position === 100) {
+			left = width * (position / 100) - $knob[0].offsetWidth * 0.6;
+		} else {
 			left = width * (position / 100) - $knob[0].offsetWidth / 2;
 		}
-
 
 		return left;
 	};
@@ -33,7 +34,7 @@ const Slider = element => {
 
 	// click on item should move knob to mark position
 	const onMarkClick = mark => {
-		$knob.css('transition', 'scale 0.2s');
+		$knob.css('transition', '0.3s');
 		$knob.css('left', getLeftAttr(mark) + 'px');
 
 		value = percentages.indexOf(Number(mark.getAttribute('data-value')));
@@ -47,9 +48,9 @@ const Slider = element => {
 			// create mark and set styles
 			const mark = document.createElement('div');
 			mark.style.position = 'absolute';
-			mark.style.left = getLeftAttr(el) + 5 + 'px';
+			mark.style.left = getLeftAttr(el) + $knob[0].offsetWidth / 2 + 'px';
 			mark.style.top = '-5px';
-			// don't set 0 and 100% persent scale
+			// don't set 0 and 100% present scale
 			if (idx !== 0 && idx !== $marks.length - 1) {
 				mark.innerText = '|';
 			}
@@ -65,17 +66,20 @@ const Slider = element => {
 	function getLeftPosition(ev) {
 		const fieldWidth = $field[0].offsetWidth;
 		const halfKnob = $knob[0].offsetWidth / 2;
+
 		// find left style parameter  for knob
 		const rect = $field[0].getBoundingClientRect();
+
 		// x coordinate of left edge of the knob relative to the field
 		const left = ev.clientX - rect.left;
+
 		// limit x movement and adjust to the knob width
 		let coord;
 		if (left + halfKnob < 0) {
 			coord = -halfKnob;
-		}else if (left + 2 * halfKnob > fieldWidth) {
+		} else if (left + 2 * halfKnob > fieldWidth) {
 			coord = fieldWidth - 2 * halfKnob;
-		}else {
+		} else {
 			coord = left - halfKnob;
 		}
 
@@ -95,6 +99,25 @@ const Slider = element => {
 		return mark[0];
 	}
 
+
+	function onMouseUp(event) {
+		if (!isMouseDown) {
+			return;
+		}
+		isMouseDown = false;
+		// remove listeners
+		document.removeEventListener('mousemove', onMouseMove);
+		$knob[0].style.transform = `scale(${TRANSFORM_SCALE_NORMAL})`;
+		document.removeEventListener('mouseup', onMouseUp);
+
+		// set transition to knob
+		$knob.css('transition', '0.4s');
+		// move knob to the nearest mark
+		const nearest = findNearestMarkPosition(event);
+
+		value = percentages.indexOf(nearest);
+	}
+
 	function onMouseMove(ev) {
 		ev.preventDefault();
 		if (!isMouseDown) {
@@ -102,29 +125,25 @@ const Slider = element => {
 		}
 		const coord = getLeftPosition(ev);
 
+		// remove transition property when move
+		$knob.css('transition', 'none');
 		// set knob position;
 		$knob.css('left', coord);
 		// listen to mouseup on the whole document
-		document.addEventListener('mouseup', function onMouseUp(event) {
+		document.addEventListener('mouseup', function (event) {
 			if (!isMouseDown) {
 				return;
 			}
 			isMouseDown = false;
-			// remove listeners and styles
+			// remove listeners
 			document.removeEventListener('mousemove', onMouseMove);
 			$knob[0].style.transform = `scale(${TRANSFORM_SCALE_NORMAL})`;
 			document.removeEventListener('mouseup', onMouseUp);
+
+			// set transition to knob
+			$knob.css('transition', '0.4s');
 			// move knob to the nearest mark
 			const nearest = findNearestMarkPosition(event);
-			let left = null;
-
-			if (nearest === 100) {
-				left = nearest * $field[0].offsetWidth / 100 - $knob[0].offsetWidth + 'px';
-			}else {
-				left = nearest * $field[0].offsetWidth / 100 - $knob[0].offsetWidth / 2 + 'px';
-			}
-
-			$knob.css('left', left);
 
 			value = percentages.indexOf(nearest);
 		});
@@ -134,14 +153,18 @@ const Slider = element => {
 	const onMouseDown = ev => {
 		const target = ev.target;
 		isMouseDown = true;
-		if (target.getAttribute('data-slider') !== 'slider-knob') {
+		if (target.getAttribute('data-slider') === 'slider-field') {
+			// move knob to clicked position
+			const coord = getLeftPosition(ev);
+			$knob.css('transition', '0.5s');
+			$knob.css('left', coord);
+		} else if (target.getAttribute('data-slider') !== 'slider-knob') {
 			return;
+		} else {
+			// scale triangle up a little
+			target.style.transform = `scale(${TRANSFORM_SCALE_UP})`;
+			document.addEventListener('mousemove', onMouseMove);
 		}
-
-		// scale triangle up a little
-		target.style.transform = `scale(${TRANSFORM_SCALE_UP})`;
-
-		document.addEventListener('mousemove', onMouseMove);
 	};
 
 
@@ -168,7 +191,6 @@ const Slider = element => {
 	const getValue = () => {
 		return value;
 	};
-
 
 	return {
 		getValue,
