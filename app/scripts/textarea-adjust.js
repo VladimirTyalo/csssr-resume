@@ -11,15 +11,18 @@ const textareaAdjust = element => {
 		$textarea.height(scrollHeight);
 	};
 
+
 	const init = () => {
+		// normalize string and remove quotes
 		const innerText = JSON.stringify(initialText).replace(/\"/g, '');
 		$textarea.val(innerText);
 
+		// to remove vertical scrollbar update textarea height
 		updateSize();
 
-		setTimeout( () => $textarea.on('input', () => {
+		$textarea.on('input', () => {
 			updateSize();
-		}), 1000);
+		});
 	};
 
 	return {

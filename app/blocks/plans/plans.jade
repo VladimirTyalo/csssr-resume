@@ -1,4 +1,3 @@
-// helper mixin for radio input + label
 mixin radio(label, id, checked)
 	+e.INPUT.input(type = "radio",name = "plan", id=id, checked=checked)
 	+e.LABEL.label(for=id) #{label}
