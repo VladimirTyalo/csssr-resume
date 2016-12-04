@@ -1,0 +1,193 @@
+<!-- TODO add other attributes and possibility to put link inside label-->
+<!-- helper mixin for radio input + label-->
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="imagetoolbar" content="no">
+		<meta name="msthemecompatible" content="no">
+		<meta name="cleartype" content="on">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="google" value="notranslate">
+		<meta name="theme-color" content="#ffffff">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link sizes="57x57" href="/apple-touch-icon-57x57.png" rel="apple-touch-icon">
+		<link sizes="114x114" href="/apple-touch-icon-114x114.png" rel="apple-touch-icon">
+		<link sizes="72x72" href="/apple-touch-icon-72x72.png" rel="apple-touch-icon">
+		<link sizes="144x144" href="/apple-touch-icon-144x144.png" rel="apple-touch-icon">
+		<link sizes="60x60" href="/apple-touch-icon-60x60.png" rel="apple-touch-icon">
+		<link sizes="120x120" href="/apple-touch-icon-120x120.png" rel="apple-touch-icon">
+		<link sizes="76x76" href="/apple-touch-icon-76x76.png" rel="apple-touch-icon">
+		<link sizes="152x152" href="/apple-touch-icon-152x152.png" rel="apple-touch-icon">
+		<link sizes="180x180" href="/apple-touch-icon-180x180.png" rel="apple-touch-icon">
+		<link sizes="192x192" href="/favicon-192x192.png" rel="icon" type="image/png">
+		<link sizes="160x160" href="/favicon-160x160.png" rel="icon" type="image/png">
+		<link sizes="96x96" href="/favicon-96x96.png" rel="icon" type="image/png">
+		<link sizes="16x16" href="/favicon-16x16.png" rel="icon" type="image/png">
+		<link sizes="32x32" href="/favicon-32x32.png" rel="icon" type="image/png">
+		<link rel="manifest" href="/manifest.json">
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;amp;subset=cyrillic" rel="stylesheet">
+		<meta name="application-name" content="">
+		<meta name="msapplication-tooltip" content="">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/mstile-large.png">
+		<meta name="msapplication-starturl" content="https://csssr.github.io/csssr-project-template/">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="msapplication-square70x70logo" content="/mstile-small.png">
+		<meta name="msapplication-square150x150logo" content="/mstile-medium.png">
+		<meta name="msapplication-wide310x150logo" content="/mstile-wide.png">
+		<meta name="msapplication-square310x310logo" content="/mstile-large.png">
+		<title>CSSSR Project Template</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="/assets/styles/app.min.css?v=1aa9fb9" rel="stylesheet">
+	</head>
+
+	<body class="page">
+		<div class="container">
+			<header class="header">
+				<img src="assets/images/test-quest-logo.png" alt="логотип csssr" class="header__logo" title="" />
+				<img src="assets/images/test-quest-title.png" alt="Дело" class="header__title" title="" />
+				<img src="assets/images/test-quest-stamp.png" alt="секретно заполнено собственноручно" class="header__stamp" title=""
+				/>
+			</header>
+			<form class="main-form">
+				<section class="personal-info">
+					<div class="personal-info__input-wrapper">
+						<label class="personal-info__label">Полное ФИО</label>
+						<div class="personal-info__wrapper">
+							<input value="Тяло Владимир Иванович" required="required" class="personal-info__input" type="text" />
+						</div>
+					</div>
+					<div class="personal-info__input-wrapper">
+						<label class="personal-info__label">Год рождения</label>
+						<div class="personal-info__wrapper">
+							<input type="text" value="1980" required="required" class="personal-info__input" />
+						</div>
+					</div>
+					<div class="personal-info__input-wrapper">
+						<label class="personal-info__label">Место жительства</label>
+						<div class="personal-info__wrapper">
+							<input type="text" value="г. Самара, Россия" required="required" class="personal-info__input" />
+						</div>
+					</div>
+					<div class="personal-info__input-wrapper">
+						<label class="personal-info__label">Скайп</label>
+						<div class="personal-info__wrapper">
+							<input type="text" value="vladimir.tyalo" required="required" class="personal-info__input" />
+						</div>
+					</div>
+					<div class="personal-info__input-wrapper">
+						<label class="personal-info__label">Почта</label>
+						<div class="personal-info__wrapper">
+							<input type="email" value="bobtial@inbox.ru" required="required" class="personal-info__input" />
+						</div>
+					</div>
+				</section>
+				<section class="skills">
+					<h3 class="skills__title">Расскажите о себе чекбоксами</h3>
+					<p class="skills__description">Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше
+						шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете
+						справляться.</p>
+					<div class="skills__checkbox-wrapper">
+						<div class="skills__column">
+							<input type="checkbox" name="bem" id="bem" checked="checked" class="skills__input" />
+							<label for="bem" class="skills__label">БЭМ/OOCSS</label>
+							<input type="checkbox" name="jade" id="jade" class="skills__input" />
+							<label for="jade" class="skills__label">Pug (Jade)</label>
+							<input type="checkbox" name="preproc" id="preproc" checked="checked" class="skills__input" />
+							<label for="preproc" class="skills__label">Stylus/LESS/SASS</label>
+							<input type="checkbox" name="svg" id="svg" class="skills__input" />
+							<label for="svg" class="skills__label">Работаю с SVG</label>
+							<input type="checkbox" name="semantic" id="semantic" checked="checked" class="skills__input"
+							/>
+							<label for="semantic" class="skills__label">Верстаю семантично</label>
+							<input type="checkbox" name="aria" id="aria" class="skills__input" />
+							<label for="aria" class="skills__label">Accessibility (A11Y)</label>
+							<input type="checkbox" name="es6" id="es6" checked="checked" class="skills__input" />
+							<label for="es6" class="skills__label">ES2015/ES2016</label>
+						</div>
+						<div class="skills__column">
+							<input type="checkbox" name="gulp" id="gulp" checked="checked" class="skills__input" />
+							<label for="gulp" class="skills__label">Gulp/GRUNT</label>
+							<input type="checkbox" name="webpack" id="webpack" checked="checked" class="skills__input" />
+							<label for="webpack" class="skills__label">Webpack</label>
+							<input type="checkbox" name="webGL" id="webGL" class="skills__input" />
+							<label for="webGL" class="skills__label">Дружу с WebGL</label>
+							<input type="checkbox" name="jQuery" id="jQuery" class="skills__input" />
+							<label for="jQuery" class="skills__label">jQuery</label>
+							<input type="checkbox" name="angular" id="angular" class="skills__input" />
+							<label for="angular" class="skills__label">Знаю/изучаю Angular</label>
+							<input type="checkbox" name="react" id="react" checked="checked" class="skills__input"
+							/>
+							<label for="react" class="skills__label">Знаю/изучаю React</label>
+							<input type="checkbox" name="node" id="node" class="skills__input" />
+							<label for="node" class="skills__label">Знаю/изучаю Node.js</label>
+						</div>
+						<div class="skills__column">
+							<input type="checkbox" name="git" id="git" checked="checked" class="skills__input" />
+							<label for="git" class="skills__label">Использую Git</label>
+							<input type="checkbox" name="eye" id="eye" checked="checked" class="skills__input" />
+							<label for="eye" class="skills__label">С глазомером всё ок</label>
+							<input type="checkbox" name="csssr" id="csssr" checked="checked" class="skills__input"
+							/>
+							<label for="csssr" class="skills__label">Читаю
+								<a href="http://blog.csssr.ru" target="_blank" class="skills__link">blog.csssr.ru</a>
+							</label>
+							<input type="checkbox" name="lasy" id="lasy" class="skills__input" />
+							<label for="lasy" class="skills__label">Я ленивый(-ая)</label>
+							<input type="checkbox" name="english" id="english" checked="checked" class="skills__input" />
+							<label for="english" class="skills__label">У меня хороший английсский</label>
+						</div>
+					</div>
+				</section>
+				<section class="javascript-level">
+					<h3 class="javascript-level__title">Уровень владения JavaScript</h3>
+					<div class="slider" id="slider">
+						<div data-slider="slider-field" class="slider__slide-field">
+							<div data-slider="slider-knob" class="slider__knob"></div>
+						</div>
+						<ul class="slider__notations">
+							<li data-slider="slider-mark" data-value="0" class="slider__notation-item">Не владею</li>
+							<li data-slider="slider-mark" data-value="19" class="slider__notation-item">Использую готовые решения</li>
+							<li data-slider="slider-mark" data-value="48" class="slider__notation-item">Испольую готовые решения и умею их переделывать</li>
+							<li data-slider="slider-mark" data-value="100" class="slider__notation-item">Пишу сложный JS с нуля</li>
+						</ul>
+					</div>
+				</section>
+				<section class="about">
+					<h3 class="about__title">Расскажите о себе словами</h3>
+					<p class="about__text">Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR. Кстати, будет здорово,
+						если при нехватке места для текста строки будут добавляться автоматически.</p>
+					<textarea rows="3" class="about__textarea"></textarea>
+				</section>
+				<section class="plans">
+					<h3 class="plans__title">Какие у вас планы на будущее?</h3>
+					<p class="plans__text">Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.</p>
+					<div class="plans__radio-wrapper">
+						<input type="radio" name="plan" id="html" checked="checked" class="plans__input" />
+						<label for="html" class="plans__label">Верстать</label>
+						<input type="radio" name="plan" id="js" class="plans__input" />
+						<label for="js" class="plans__label">Прокачиваться в JS</label>
+						<input type="radio" name="plan" id="pm" class="plans__input" />
+						<label for="pm" class="plans__label">Менеджерство</label>
+						<input type="radio" name="plan" id="other" class="plans__input" />
+						<label for="other" class="plans__label">Другое</label>
+					</div>
+				</section>
+				<section class="date">
+					<label class="date__label">Дата заполнения</label>
+					<input type="text" value="01.01.2016" class="date__input" />
+				</section>
+			</form>
+			<script src="/assets/scripts/app.min.js?v=7f14100"></script>
+		</div>
+	</body>
+
+</html>
