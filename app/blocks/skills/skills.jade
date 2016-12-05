@@ -6,7 +6,7 @@ mixin checkbox(label, name, checked, href, descr)
 			+e.A.link(href=href target="_blank") #{descr}
 
 mixin skills()
-	+b.SECTION.skills&attributes(attributes)
+	+b.FIELDSET.skills&attributes(attributes)
 		+e.H3.title Расскажите о себе чекбоксами
 
 		+e.P.description Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.

@@ -57,8 +57,8 @@
 				<img src="assets/images/test-quest-stamp.png" alt="секретно заполнено собственноручно" class="header__stamp" title=""
 				/>
 			</header>
-			<form class="main-form">
-				<section class="personal-info">
+			<form class="main-form" id="form" method="POST">
+				<fieldset class="personal-info">
 					<h3 class="visually-hidden">Персональные данные</h3>
 					<div class="personal-info__input-wrapper">
 						<label class="personal-info__label">Полное ФИО</label>
@@ -90,8 +90,8 @@
 							<input type="email" value="bobtial@inbox.ru" required="required" class="personal-info__input" />
 						</div>
 					</div>
-				</section>
-				<section class="skills">
+				</fieldset>
+				<fieldset class="skills">
 					<h3 class="skills__title">Расскажите о себе чекбоксами</h3>
 					<p class="skills__description">Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше
 						шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете
@@ -147,9 +147,9 @@
 							<label for="english" class="skills__label">У меня хороший английсский</label>
 						</div>
 					</div>
-				</section>
-				<section class="javascript-level">
-					<h3 class="javascript-level__title">Уровень владения JavaScript</h3>
+				</fieldset>
+				<fieldset class="javascript-level">
+					<legend class="javascript-level__title">Уровень владения JavaScript</legend>
 					<div class="slider" id="slider">
 						<div data-slider="slider-field" class="slider__slide-field">
 							<div data-slider="slider-knob" class="slider__knob"></div>
@@ -161,8 +161,8 @@
 							<li data-slider="slider-mark" data-value="100" class="slider__notation-item">Пишу сложный JS с нуля</li>
 						</ul>
 					</div>
-				</section>
-				<section class="about">
+				</fieldset>
+				<fieldset class="about">
 					<h3 class="about__title">Расскажите о себе словами</h3>
 					<p class="about__text">Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR. Кстати, будет здорово,
 						если при нехватке места для текста строки будут добавляться автоматически.</p>
@@ -173,8 +173,8 @@
 						</pre>
 						<textarea class="expanding-area__textarea"></textarea>
 					</div>
-				</section>
-				<section class="plans">
+				</fieldset>
+				<fieldset class="plans">
 					<h3 class="plans__title">Какие у вас планы на будущее?</h3>
 					<p class="plans__text">Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.</p>
 					<div class="plans__radio-wrapper">
@@ -187,14 +187,14 @@
 						<input type="radio" name="plan" id="other" class="plans__input" />
 						<label for="other" class="plans__label">Другое</label>
 					</div>
-				</section>
-				<section class="date">
+				</fieldset>
+				<fieldset class="date">
 					<h3 class="visually-hidden">Дата</h3>
 					<label class="date__label">Дата заполнения</label>
 					<input type="text" value="05.12.2016" class="date__input" />
-				</section>
+				</fieldset>
 			</form>
-			<script src="/assets/scripts/app.min.js"></script>
+			<script src="assets/scripts/app.min.js"></script>
 		</div>
 	</body>
 

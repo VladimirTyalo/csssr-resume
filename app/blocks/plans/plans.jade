@@ -3,7 +3,7 @@ mixin radio(label, id, checked)
 	+e.LABEL.label(for=id) #{label}
 
 mixin plans()
-	+b.SECTION.plans&attributes(attributes)
+	+b.FIELDSET.plans&attributes(attributes)
 		+e.H3.title Какие у вас планы на будущее?
 		+e.P.text Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.
 

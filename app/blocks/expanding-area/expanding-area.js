@@ -8,7 +8,7 @@ function makeExpandingArea(container, defaultValue = aboutMe) {
 	const span = container.querySelector('span');
 	const THROTTLE_TIME = 100;
 
-	function onInput(ev) {
+	function onInput() {
 		span.textContent = area.value;
 	}
 

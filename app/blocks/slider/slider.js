@@ -178,7 +178,6 @@ const Slider = element => {
 			if (target.getAttribute('data-slider') !== 'slider-mark') {
 				return;
 			}
-
 			onMarkClick(target);
 		});
 

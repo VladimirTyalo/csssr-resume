@@ -21,7 +21,7 @@ html(lang='ru')
 	+page
 		+container
 			+header
-			+main-form
+			+main-form(id='form' method='POST')
 				+personal-info
 				+skills
 				+javascript-level
@@ -32,4 +32,4 @@ html(lang='ru')
 				+date
 
 			block content
-			+scripts(['app.min.js'])
+			+scripts(['assets/scripts/app.min.js'])
