@@ -161,7 +161,8 @@ rules:
             return: {after: true},
             throw: {after: true},
             case: {after: true},
-			else: {before: true}
+			else: {before: true},
+            from: {before: true}
         }}]
     space-before-function-paren: [2, {anonymous: 'always', named: 'never'}]
     space-in-parens: 0

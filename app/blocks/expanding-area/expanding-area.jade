@@ -1,0 +1,9 @@
+// nice hack for textarea expanding on input http://alistapart.com/article/expanding-text-areas-made-elegant
+mixin expanding-area()
+	+b.DIV.expanding-area&attributes(attributes)
+		+e.PRE.mirror
+			+e.SPAN.mirror-content
+			+e.BR.space-adjust
+		+e.TEXTAREA.textarea
+
+		block

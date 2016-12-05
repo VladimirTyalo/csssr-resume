@@ -13,6 +13,8 @@ include ../plans/plans
 include ../about/about
 include ../date/date
 include ../slider/slider
+include ../expanding-area/expanding-area
+
 
 doctype html
 html(lang='ru')
@@ -26,7 +28,9 @@ html(lang='ru')
 				+javascript-level
 					+slider(id='slider')
 				+about
+					+expanding-area
 				+plans
 				+date
+
 			block content
 			+scripts(['app.min.js'])

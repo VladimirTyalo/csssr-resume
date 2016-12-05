@@ -22,19 +22,22 @@
 		position relative
 		flex 1 0 200px
 
+		// handwriting lines
 		&::after
 			position absolute
+			bottom -.2em
+			left -2px
 			width 100%
-			height 10px
+			height 0.4em
 			content ''
 			background-image url('../images/line.png')
 			background-repeat no-repeat
-			background-position left -10px bottom -20px
-
+			background-position -2px center
 
 	&__input
 		input()
 		width 100%
+
 
 @media (max-width 920px)
 	.personal-info
