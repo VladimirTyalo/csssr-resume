@@ -1,4 +1,5 @@
 <!-- TODO add other attributes and possibility to put link inside label-->
+<!-- nice hack for textarea expanding on input http://alistapart.com/article/expanding-text-areas-made-elegant-->
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -165,7 +166,13 @@
 					<h3 class="about__title">Расскажите о себе словами</h3>
 					<p class="about__text">Напишите пару предложений, чем вас привлекла наша вакансия и чего вы ожидаете от работы в CSSSR. Кстати, будет здорово,
 						если при нехватке места для текста строки будут добавляться автоматически.</p>
-					<textarea rows="3" class="about__textarea"></textarea>
+					<div class="expanding-area">
+						<pre class="expanding-area__mirror">
+							<span class="expanding-area__mirror-content"></span>
+							<br class="expanding-area__space-adjust" />
+						</pre>
+						<textarea class="expanding-area__textarea"></textarea>
+					</div>
 				</section>
 				<section class="plans">
 					<h3 class="plans__title">Какие у вас планы на будущее?</h3>
@@ -184,7 +191,7 @@
 				<section class="date">
 					<h3 class="visually-hidden">Дата</h3>
 					<label class="date__label">Дата заполнения</label>
-					<input type="text" value="01.01.2016" class="date__input" />
+					<input type="text" value="05.12.2016" class="date__input" />
 				</section>
 			</form>
 			<script src="/assets/scripts/app.min.js"></script>
