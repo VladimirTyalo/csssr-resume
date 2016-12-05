@@ -1,5 +1,5 @@
 // use this mixin in textarea and it's mirror for syncronizing sizes
-textareaStiles() {
+textareaStiles()
 	margin 0
 	padding 0
 	font-family font-courier-new
@@ -9,9 +9,9 @@ textareaStiles() {
 	// font-size in rems with px fallback
 	set-font-size(font-size-input)
 	line-height 2
-	outline 0
 	border none
-}
+	outline none
+
 
 .expanding-area
 	position relative
@@ -32,7 +32,6 @@ textareaStiles() {
 
 	&__mirror-content
 		textareaStiles()
-		tab-indent 0
 
 	&_active .expanding-area__mirror
 		display block
@@ -41,10 +40,9 @@ textareaStiles() {
 
 	&_active  .expanding-area__textarea
 		/* Hide any scrollbars */
-		position: absolute;
-		overflow: hidden;
-		top: 0;
-		left: 0;
-		height: 100%;
-		/* Remove WebKit user-resize widget */
-		resize: none;
+		position absolute
+		top 0
+		left 0
+		overflow hidden
+		height 100%
+		resize none
