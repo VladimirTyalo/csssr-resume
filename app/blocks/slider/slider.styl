@@ -5,7 +5,7 @@
 	background-image url('../images/line.png')
 	background-repeat repeat-x
 	background-position left 0 top 40px
-
+	cursor pointer
 	// left border
 	&::before
 		position absolute
@@ -31,6 +31,12 @@
 		left 0
 		width 3em
 		height 3em
+
+		&_move
+			transition all 0.5s ease
+
+		&_scale
+			transform scale(1.2)
 
 		&:before
 			position absolute
