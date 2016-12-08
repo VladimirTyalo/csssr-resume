@@ -11,7 +11,7 @@ function Slider(element) {
 		let positionLeft = clientX - sliderOffsetLeft - $knob.width() / 2;
 
 		// set boundaries for positionLeft
-		if (positionLeft < 0) {
+		if (positionLeft < -$knob.width() / 2) {
 			positionLeft = -$knob.width() / 2;
 		} else if (positionLeft > $slider[0].offsetWidth - $knob.width() / 2) {
 			positionLeft = $slider[0].offsetWidth - $knob.width() / 2;

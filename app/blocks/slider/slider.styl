@@ -1,16 +1,16 @@
 .slider
 	position relative
-	padding-top 6em
-	min-height 200px
+	padding-top 4.6rem
+	min-height 113px
 	background-image url('../images/line.png')
 	background-repeat repeat-x
-	background-position left 0 top 40px
+	background-position left 0 top 18px
 	cursor pointer
 	// left border
 	&::before
 		position absolute
-		left 4px
-		top 68px
+		left0 0
+		top 46px
 		width 3px
 		height 26px
 		content ''
@@ -19,7 +19,7 @@
 	&::after
 		position absolute
 		right 0
-		top 68px
+		top 46px
 		width 3px
 		height 26px
 		content ''
@@ -27,7 +27,7 @@
 
 	&__knob
 		position absolute
-		top 30px
+		top 8px
 		left 0
 		width 3em
 		height 3em
@@ -56,7 +56,39 @@
 		align-items flex-start
 
 	&__notation-item
-		margin-right 2em
+		position relative
+		margin-right 1em
+		flex 0 1 200px
+		set-font-size(font-size-slider)
+
+		// scale mark
+		&::after
+			position absolute
+			top -27px
+			left 0
+			content ''
+			width 3px
+			height 12px
+			background color-borders
+
+		&:nth-of-type(1)
+			flex-basis 130px
+			&::after
+				display none
+
+		&:nth-of-type(2)
+			flex-basis 200px
+			margin-right 20px
+
+
+		&:nth-of-type(3)
+			flex-basis 180px
+			margin-right 20px
+			line-height 1rem
+
 
 		&:last-of-type
 			margin-right 0
+			text-align right
+			&::after
+				display none
