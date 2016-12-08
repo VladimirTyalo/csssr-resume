@@ -7,7 +7,7 @@ import Slider from '../blocks/slider/slider.js';
 $(() => {
 	svg4everybody();
 
-	// init textarea rows adjustment
+	// init textarea rows adjustment function
 	const $about = $('.expanding-area');
 	makeExpandingArea($about[0]);
 

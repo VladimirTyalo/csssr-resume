@@ -21,7 +21,7 @@ gulp.task('server', () => (
 				'app/resources',
 				'dist'
 			],
-			directory: false
+			directory: false,
 			middleware: NODE_ENV !== 'production' ? [debuga()] : []
 		},
 		tunnel: !!TUNNEL

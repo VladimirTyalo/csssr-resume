@@ -1,78 +1,56 @@
 .slider
-	padding-top 5px
+	position relative
+	padding-top 6em
+	min-height 200px
 	background-image url('../images/line.png')
 	background-repeat repeat-x
-	background-position left -3px top -24px
+	background-position left 0 top 40px
 
-	&__slide-field
-		position relative
-		margin-bottom 5px
-		height 25px
-		border-top 2px solid color-borders
-		border-left 3px solid color-borders
-		border-right 3px solid color-borders
+	// left border
+	&::before
+		position absolute
+		left 4px
+		top 68px
+		width 3px
+		height 26px
+		content ''
+		background color-borders
 
-	// make it bigger for better user experience
+	&::after
+		position absolute
+		right 0
+		top 68px
+		width 3px
+		height 26px
+		content ''
+		background color-borders
+
 	&__knob
 		position absolute
-		top -50px
-		left 50%
-		width 50px
-		height 50px
-		cursor pointer
-		transition transform .3s
+		top 30px
+		left 0
+		width 3em
+		height 3em
 
-		// inner triangle
-		&::after
+		&:before
 			position absolute
-			top 25px
+			bottom 10px
 			left 50%
-			width 1px
-			height 1px
 			content ''
-			border 8px solid transparent
-			border-top 14px solid #2f1b15
-			transform translateX(-50%)
-			transition transform .3s
-
+			width 0
+			height 0
+			border 7px solid transparent
+			border-top 15px solid color-borders
+			transform translate3d(-50%, 0, 0)
 
 	&__notations
-		display table
+		display flex
+		flex-flow row nowrap
+		justify-content space-around
+		align-items flex-start
 
 	&__notation-item
-		position relative
-		margin-right 5px
-		display table-cell
-		set-font-size(font-size-slider)
-		font-weight bold
-		line-height 1.35
-		cursor pointer
-		transition .3s
-
-		&:hover
-			transform rotate(2deg)
-
-		&:nth-of-type(1)
-			width 19%
-
-		&:nth-of-type(2)
-			width 29%
-
-		&:nth-of-type(3)
-			width 22%
+		margin-right 2em
 
 		&:last-of-type
 			margin-right 0
-			padding-top 5px
-			width 30%
-			text-align right
-
-			&::before
-				display none
-
-
-@media (max-width 520px)
-	.slider
-
-		&__notation-item
-			set-font-size(13px)
