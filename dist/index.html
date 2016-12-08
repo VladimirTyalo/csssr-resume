@@ -52,14 +52,16 @@
 	<body class="page">
 		<div class="container">
 			<header class="header">
-				<img src="assets/images/test-quest-logo.png" alt="логотип csssr" class="header__logo" title="" />
-				<img src="assets/images/test-quest-title.png" alt="Дело" class="header__title" title="" />
+				<img src="assets/images/test-quest-logo.png" alt="логотип комании csssr" class="header__logo" title="" />
+				<h1 class="header__logo-wrapper">
+					<img src="assets/images/test-quest-title.png" alt="Дело" class="header__title" title="" />
+				</h1>
 				<img src="assets/images/test-quest-stamp.png" alt="секретно заполнено собственноручно" class="header__stamp" title=""
 				/>
 			</header>
 			<form class="main-form" id="form" method="POST">
 				<fieldset class="personal-info">
-					<h3 class="visually-hidden">Персональные данные</h3>
+					<LEGEND class="visually-hidden">Персональные данные</LEGEND>
 					<div class="personal-info__input-wrapper">
 						<label class="personal-info__label">Полное ФИО</label>
 						<div class="personal-info__wrapper">
@@ -92,7 +94,7 @@
 					</div>
 				</fieldset>
 				<fieldset class="skills">
-					<h3 class="skills__title">Расскажите о себе чекбоксами</h3>
+					<legend class="skills__title">Расскажите о себе чекбоксами</legend>
 					<p class="skills__description">Отметьте чекбоксами пункты, которые соответствуют вашим скиллам. Кстати, отсутствие опыта не означает, что у вас меньше
 						шансов стать одним из наших товарищей. Это означает, что вы будете получать те задачи, с которыми гарантировано будете
 						справляться.</p>
@@ -175,7 +177,7 @@
 					</div>
 				</fieldset>
 				<fieldset class="plans">
-					<h3 class="plans__title">Какие у вас планы на будущее?</h3>
+					<legend class="plans__title">Какие у вас планы на будущее?</legend>
 					<p class="plans__text">Этот ответ ни на что не повлияет. Не беда, если в будущем ваши планы поменяются.</p>
 					<div class="plans__radio-wrapper">
 						<input type="radio" name="plan" id="html" checked="checked" class="plans__input" />
@@ -189,7 +191,7 @@
 					</div>
 				</fieldset>
 				<fieldset class="date">
-					<h3 class="visually-hidden">Дата</h3>
+					<LEGEND class="visually-hidden">Дата</LEGEND>
 					<label class="date__label">Дата заполнения</label>
 					<input type="text" value="05.12.2016" class="date__input" />
 				</fieldset>
