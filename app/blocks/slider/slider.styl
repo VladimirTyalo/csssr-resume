@@ -51,17 +51,19 @@
 			transform translate3d(-50%, 0, 0)
 
 	&__notations
+		display table // flex fallback for ios8
 		display flex
 		flex-flow row nowrap
-		justify-content space-around
+		width 100%
+		justify-content space-between
 		align-items flex-start
 
 	&__notation-item
 		position relative
 		margin-right 1em
-		// fallback for flex
-		float left
-		flex 0 1 200px
+		// flex fallback for flex
+		display table-cell
+		// flex 0 1 200px
 		set-font-size(font-size-slider)
 
 		// scale mark
@@ -75,17 +77,17 @@
 			background color-borders
 
 		&:nth-of-type(1)
-			flex-basis 130px
+			// flex-basis 130px
 			&::after
 				display none
 
 		&:nth-of-type(2)
-			flex-basis 200px
+			// flex-basis 200px
 			margin-right 20px
 
 
 		&:nth-of-type(3)
-			flex-basis 180px
+			// flex-basis 180px
 			margin-right 20px
 			line-height 1rem
 
