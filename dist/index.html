@@ -16,21 +16,21 @@
 		<meta name="theme-color" content="#ffffff">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<link sizes="57x57" href="/apple-touch-icon-57x57.png" rel="apple-touch-icon">
-		<link sizes="114x114" href="/apple-touch-icon-114x114.png" rel="apple-touch-icon">
-		<link sizes="72x72" href="/apple-touch-icon-72x72.png" rel="apple-touch-icon">
-		<link sizes="144x144" href="/apple-touch-icon-144x144.png" rel="apple-touch-icon">
-		<link sizes="60x60" href="/apple-touch-icon-60x60.png" rel="apple-touch-icon">
-		<link sizes="120x120" href="/apple-touch-icon-120x120.png" rel="apple-touch-icon">
-		<link sizes="76x76" href="/apple-touch-icon-76x76.png" rel="apple-touch-icon">
-		<link sizes="152x152" href="/apple-touch-icon-152x152.png" rel="apple-touch-icon">
-		<link sizes="180x180" href="/apple-touch-icon-180x180.png" rel="apple-touch-icon">
-		<link sizes="192x192" href="/favicon-192x192.png" rel="icon" type="image/png">
-		<link sizes="160x160" href="/favicon-160x160.png" rel="icon" type="image/png">
-		<link sizes="96x96" href="/favicon-96x96.png" rel="icon" type="image/png">
-		<link sizes="16x16" href="/favicon-16x16.png" rel="icon" type="image/png">
-		<link sizes="32x32" href="/favicon-32x32.png" rel="icon" type="image/png">
-		<link rel="manifest" href="/manifest.json">
+		<link sizes="57x57" href="apple-touch-icon-57x57.png" rel="apple-touch-icon">
+		<link sizes="114x114" href="apple-touch-icon-114x114.png" rel="apple-touch-icon">
+		<link sizes="72x72" href="apple-touch-icon-72x72.png" rel="apple-touch-icon">
+		<link sizes="144x144" href="apple-touch-icon-144x144.png" rel="apple-touch-icon">
+		<link sizes="60x60" href="apple-touch-icon-60x60.png" rel="apple-touch-icon">
+		<link sizes="120x120" href="apple-touch-icon-120x120.png" rel="apple-touch-icon">
+		<link sizes="76x76" href="apple-touch-icon-76x76.png" rel="apple-touch-icon">
+		<link sizes="152x152" href="apple-touch-icon-152x152.png" rel="apple-touch-icon">
+		<link sizes="180x180" href="apple-touch-icon-180x180.png" rel="apple-touch-icon">
+		<link sizes="192x192" href="favicon-192x192.png" rel="icon" type="image/png">
+		<link sizes="160x160" href="favicon-160x160.png" rel="icon" type="image/png">
+		<link sizes="96x96" href="favicon-96x96.png" rel="icon" type="image/png">
+		<link sizes="16x16" href="favicon-16x16.png" rel="icon" type="image/png">
+		<link sizes="32x32" href="favicon-32x32.png" rel="icon" type="image/png">
+		<link rel="manifest" href="manifest.json">
 		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;amp;subset=cyrillic" rel="stylesheet">
 		<meta name="application-name" content="">
 		<meta name="msapplication-tooltip" content="">
@@ -52,16 +52,17 @@
 	<body class="page">
 		<div class="container">
 			<header class="header">
-				<img src="assets/images/test-quest-logo.png" alt="логотип комании csssr" class="header__logo" title="" />
+				<img src="assets/images/test-quest-logo.png" alt="логотип комании csssr" width="154" height="52" class="header__logo"
+					title="" />
 				<h1 class="header__logo-wrapper">
-					<img src="assets/images/test-quest-title.png" alt="Дело" class="header__title" title="" />
+					<img src="assets/images/test-quest-title.png" alt="Дело" width="221" height="118" class="header__title" title="" />
 				</h1>
-				<img src="assets/images/test-quest-stamp.png" alt="секретно заполнено собственноручно" class="header__stamp" title=""
-				/>
+				<img src="assets/images/test-quest-stamp.png" alt="секретно заполнено собственноручно" width="252" height="106" class="header__stamp"
+					title="" />
 			</header>
-			<form class="main-form" id="form" method="POST" action="/">
+			<form class="main-form" id="form" method="POST" action="#">
 				<fieldset class="personal-info">
-					<LEGEND class="visually-hidden">Персональные данные</LEGEND>
+					<legend class="visually-hidden">Персональные данные</legend>
 					<div class="personal-info__input-wrapper">
 						<label class="personal-info__label">Полное ФИО</label>
 						<div class="personal-info__wrapper">
@@ -102,7 +103,7 @@
 						<div class="skills__column">
 							<input type="checkbox" name="bem" id="bem" checked="checked" class="skills__input" />
 							<label for="bem" class="skills__label">БЭМ/OOCSS</label>
-							<input type="checkbox" name="jade" id="jade" class="skills__input" />
+							<input type="checkbox" name="jade" id="jade" checked="checked" class="skills__input" />
 							<label for="jade" class="skills__label">Pug (Jade)</label>
 							<input type="checkbox" name="preproc" id="preproc" checked="checked" class="skills__input" />
 							<label for="preproc" class="skills__label">Stylus/LESS/SASS</label>
@@ -123,7 +124,7 @@
 							<label for="webpack" class="skills__label">Webpack</label>
 							<input type="checkbox" name="webGL" id="webGL" class="skills__input" />
 							<label for="webGL" class="skills__label">Дружу с WebGL</label>
-							<input type="checkbox" name="jQuery" id="jQuery" class="skills__input" />
+							<input type="checkbox" name="jQuery" id="jQuery" checked="checked" class="skills__input" />
 							<label for="jQuery" class="skills__label">jQuery</label>
 							<input type="checkbox" name="angular" id="angular" class="skills__input" />
 							<label for="angular" class="skills__label">Знаю/изучаю Angular</label>
@@ -189,9 +190,9 @@
 					</div>
 				</fieldset>
 				<fieldset class="date">
-					<LEGEND class="visually-hidden">Дата</LEGEND>
+					<legend class="visually-hidden">Дата</legend>
 					<label class="date__label">Дата заполнения</label>
-					<input id="datepicker" type="text" value="05.12.2016" class="date__input" />
+					<input id="datepicker" type="text" value="09.12.2016" class="date__input" />
 				</fieldset>
 			</form>
 			<script src="assets/scripts/app.min.js"></script>
