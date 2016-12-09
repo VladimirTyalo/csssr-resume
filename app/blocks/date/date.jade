@@ -2,5 +2,6 @@ mixin date()
 	+b.FIELDSET.date&attributes(attributes)
 		LEGEND.visually-hidden Дата
 		+e.LABEL.label Дата заполнения
-		+e.INPUT.input(type="text" value="05.12.2016")
+		+e.INPUT.input(id='datepicker' type="text" value="05.12.2016")
+
 		block

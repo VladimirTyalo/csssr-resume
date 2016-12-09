@@ -2,15 +2,15 @@
 	position relative
 	padding-top 4.6rem
 	min-height 113px
+	cursor pointer
 	background-image url('../images/line.png')
 	background-repeat repeat-x
 	background-position left 0 top 18px
-	cursor pointer
 	// left border
 	&::before
 		position absolute
-		left0 0
 		top 46px
+		left 0
 		width 3px
 		height 26px
 		content ''
@@ -18,8 +18,8 @@
 
 	&::after
 		position absolute
-		right 0
 		top 46px
+		right 0
 		width 3px
 		height 26px
 		content ''
@@ -33,18 +33,18 @@
 		height 3em
 
 		&_move
-			transition all 0.5s ease
+			transition all .5s ease
 
 		&_scale
 			transform scale(1.2)
 
 		&:before
 			position absolute
-			bottom 10px
 			left 50%
-			content ''
+			bottom 10px
 			width 0
 			height 0
+			content ''
 			border 7px solid transparent
 			border-top 15px solid color-borders
 			transform translate3d(-50%, 0, 0)
@@ -66,9 +66,9 @@
 			position absolute
 			top -27px
 			left 0
-			content ''
 			width 3px
 			height 12px
+			content ''
 			background color-borders
 
 		&:nth-of-type(1)

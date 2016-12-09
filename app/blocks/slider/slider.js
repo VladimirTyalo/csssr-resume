@@ -46,7 +46,12 @@ function Slider(element) {
 			isDragging = true;
 			$slider.on('touchmove', touchMove);
 		}
+	}
 
+	function moveStart(ev) {
+		ev.preventDefault();
+		setX(ev.clientX);
+		window.addEventListener('mouseup', mouseUp);
 	}
 
 	function touchMove(ev) {
@@ -80,18 +85,11 @@ function Slider(element) {
 		$knob.removeClass('slider__knob_scale');
 	}
 
-	function touchEnd(ev) {
+	function touchEnd() {
 		$slider.unbind('touchmove', touchMove);
 		window.removeEventListener('touchEnd', touchEnd);
 		isDragging = false;
 	}
-
-	function moveStart(ev) {
-		ev.preventDefault();
-		setX(ev.clientX);
-		window.addEventListener('mouseup', mouseUp);
-	}
-
 
 	return {
 		init: () => {

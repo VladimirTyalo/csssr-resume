@@ -125,6 +125,7 @@
     "webpack-stream": "^3.1.0"
   },
   "dependencies": {
-    "flatpickr": "^2.2.3"
+    "flatpickr": "^2.2.3",
+    "pikaday": "^1.5.1"
   }
 }
