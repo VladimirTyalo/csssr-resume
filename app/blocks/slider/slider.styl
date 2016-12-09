@@ -29,7 +29,7 @@
 	&__knob
 		position absolute
 		top 8px
-		left 370px
+		left 36.5% // initial knob position Использую готовые решения и уменю их переделывать
 		width 3em
 		height 3em
 
@@ -51,7 +51,7 @@
 			transform translate3d(-50%, 0, 0)
 
 	&__notations
-		display table // flex fallback for ios8
+		display table // flex fallback for older browsers
 		display flex
 		flex-flow row nowrap
 		width 100%
@@ -61,7 +61,7 @@
 	&__notation-item
 		position relative
 		margin-right 1em
-		// flex fallback for flex
+		// flex fallback for older browsers
 		display table-cell
 		// flex 0 1 200px
 		set-font-size(font-size-slider)

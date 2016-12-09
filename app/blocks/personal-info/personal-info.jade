@@ -4,26 +4,26 @@ mixin personal-info(fields)
 		+e.DIV.input-wrapper
 			+e.LABEL.label Полное ФИО
 			+e.DIV.wrapper
-				+e.INPUT.input(value='Тяло Владимир Иванович', required=true)
+				+e.INPUT.input(type='text', value='Тяло Владимир Иванович', required=true, role='textbox')
 
 		+e.DIV.input-wrapper
 			+e.LABEL.label Год рождения
 			+e.DIV.wrapper
-				+e.INPUT.input(type='text', value='1980', required=true)
+				+e.INPUT.input(type='text', value='1980', required=true, role='textbox')
 
 		+e.DIV.input-wrapper
 			+e.LABEL.label Место жительства
 			+e.DIV.wrapper
-				+e.INPUT.input(type='text', value='г. Самара, Россия', required=true)
+				+e.INPUT.input(type='text', value='г. Самара, Россия', required=true, role='textbox')
 
 		+e.DIV.input-wrapper
 			+e.LABEL.label Скайп
 			+e.DIV.wrapper
-				+e.INPUT.input(type='text', value='vladimir.tyalo', required=true)
+				+e.INPUT.input(type='text', value='vladimir.tyalo', required=true, role='textbox')
 
 		+e.DIV.input-wrapper
 			+e.LABEL.label Почта
 			+e.DIV.wrapper
-				+e.INPUT.input(type='email', value='bobtial@inbox.ru', required=true)
+				+e.INPUT.input(type='email', value='bobtial@inbox.ru', required=true, role='textbox')
 
 		block

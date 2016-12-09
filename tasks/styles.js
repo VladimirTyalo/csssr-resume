@@ -14,6 +14,8 @@ import errorHandler from 'gulp-plumber-error-handler';
 
 const isDebug = process.env.NODE_ENV !== 'production';
 
+const autoprefixerOptions = { browsers: ['last 2 versions', 'iOS > 8', 'android > 5'] };
+
 gulp.task('styles', () => (
 	gulp.src('app/styles/*.styl')
 		.pipe(plumber({errorHandler: errorHandler(`Error in \'styles\' task`)}))
@@ -22,7 +24,7 @@ gulp.task('styles', () => (
 			use: [
 				importIfExist(),
 				rupture(),
-				autoprefixer()
+				autoprefixer(autoprefixerOptions)
 			],
 			'include css': true
 		}))
